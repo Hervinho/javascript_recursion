@@ -1,4 +1,5 @@
 //Implementing recursive countdown function with promises.
+var value = 10;
 
 var countdown = function(value) {
 	return new Promise((resolve, reject) => {
@@ -7,7 +8,6 @@ var countdown = function(value) {
         resolve(countdown(value - 1));
 		} 
 		else{
-			//console.log('Value: ', value);
 			reject('Countdown reached zero.');
 		}
   });
@@ -15,8 +15,8 @@ var countdown = function(value) {
 };
 
 
-countdown(10).then((result)=>{
-	console.log(result);
+countdown(value).then((result)=>{
+	
 }).catch((error)=>{
 	console.log(error);
 });
