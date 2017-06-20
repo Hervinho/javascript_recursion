@@ -1,5 +1,5 @@
 //Implementing factorial function.
-var factorial = function(number) {
+var factorial = function(number, callback) {
   console.log('Factorial function with for loop');
   console.log('---------------------------------');
   var result = 1;
@@ -32,9 +32,9 @@ countdown(4);
 console.log(' ******* ');
 
 //Implementing recursive factorial function.
-console.log('Recursive factorial function');
-console.log('---------------------------------');
-var factorialRecurse = function(number) {
+console.log('Recursive factorial function with callback');
+console.log('------------------------------------------');
+var factorialRecurse = function(number, callback) {
   
   var result = 1;
   var count;
@@ -45,6 +45,6 @@ var factorialRecurse = function(number) {
 	  console.log('Number after iteration: ', number);
 	  return (number * factorialRecurse(number - 1));
   }
-  return result;
+  callback(result);
 };
-console.log(factorialRecurse(4));
+console.log(factorialRecurse(5));
